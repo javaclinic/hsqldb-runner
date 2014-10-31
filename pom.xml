@@ -1,0 +1,40 @@
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="
+    http://maven.apache.org/POM/4.0.0
+    http://maven.apache.org/xsd/maven-4.0.0.xsd
+  "
+>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.javaclinic</groupId>
+    <artifactId>hsqldb-runner</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>Hsqldb Runner</name>
+    <description>This is a simple in-memory database runner program.</description>
+
+    <properties>
+        <java.version>1.7</java.version>
+        <hsqldb.version>2.3.2</hsqldb.version>
+        <sqltool.version>2.3.2</sqltool.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>${hsqldb.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>sqltool</artifactId>
+            <version>${sqltool.version}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>
