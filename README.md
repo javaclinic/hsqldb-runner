@@ -23,3 +23,9 @@ Initial Settings
 - JDBC db name:     `mydb`
 - JDBC schema file: `src/main/resources/database/schema.sql`
 - JDBC seed file:   `src/main/resources/database/seed.sql`
+
+Todo
+----
+- Add maven exec plugin for all runnable tasks
+
+
