@@ -5,6 +5,13 @@ import org.hsqldb.cmdline.SqlTool.SqlToolException;
 
 import com.javaclinic.hsqldbrunner.settings.MyDatabase;
 
+/**
+ * Re-initializes the HyperSQL database instance. Drops and re-creates all tables as
+ * defined in src/main/resources/database/schema.sql file.
+ * 
+ * @author neven
+ *
+ */
 public class ReInitializeDatabaseTables {
 
     public static void main(String[] args) throws SqlToolException {

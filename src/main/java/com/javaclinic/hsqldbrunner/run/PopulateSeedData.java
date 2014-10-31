@@ -5,6 +5,13 @@ import org.hsqldb.cmdline.SqlTool.SqlToolException;
 
 import com.javaclinic.hsqldbrunner.settings.MyDatabase;
 
+/**
+ * Populates the HyperSQL database instance, as defined in
+ * src/main/resources/database/seed.sql file.
+ * 
+ * @author neven
+ *
+ */
 public class PopulateSeedData {
 
     public static void main(String[] args) throws SqlToolException {

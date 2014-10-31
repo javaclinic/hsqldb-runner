@@ -4,6 +4,12 @@ import org.hsqldb.Server;
 
 import com.javaclinic.hsqldbrunner.settings.MyDatabase;
 
+/**
+ * Starts a HyperSQL database instance.
+ * 
+ * @author neven
+ *
+ */
 public class StartHsqldbServer {
 
     public static void main(String[] args) {
@@ -25,6 +31,6 @@ public class StartHsqldbServer {
         System.out.println("  driver:   " + MyDatabase.DATABASE_DRIVER);
         System.out.println("\n\n");
 
-}
+    }
 
 }

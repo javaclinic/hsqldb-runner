@@ -4,7 +4,12 @@ import org.hsqldb.util.DatabaseManager;
 
 import com.javaclinic.hsqldbrunner.settings.MyDatabase;
 
-
+/**
+ * Starts HyperSQL Database Manager (GUI) for the running instance.
+ * 
+ * @author neven
+ *
+ */
 public class StartDatabaseManagerGui {
 
     public static void main(String[] args) {

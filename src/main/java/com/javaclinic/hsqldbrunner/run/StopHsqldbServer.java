@@ -7,6 +7,12 @@ import java.sql.SQLException;
 
 import com.javaclinic.hsqldbrunner.settings.MyDatabase;
 
+/**
+ * Stops the running HyperSQL database instance.
+ * 
+ * @author neven
+ *
+ */
 public class StopHsqldbServer {
 
     public static void main(String[] args) throws ClassNotFoundException {
