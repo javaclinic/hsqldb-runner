@@ -14,6 +14,7 @@ Features
 
 Initial Settings
 ----------------
+Initial settings are hardcoded in the `com.javaclinic.hsqldbrunner.settings.MyDatabase` class:
 - JDBC driver:      `org.hsqldb.jdbcDriver`
 - JDBC url:         `jdbc:hsqldb:hsql://localhost:9002/mydb`
 - JDBC datafile:    `file:database/data`
@@ -24,8 +25,18 @@ Initial Settings
 - JDBC schema file: `src/main/resources/database/schema.sql`
 - JDBC seed file:   `src/main/resources/database/seed.sql`
 
+Usage
+-----
+- Start Hsqldb Database:               `mvn exec:java -Dexec.mainClass=com.javaclinic.hsqldbrunner.run.StartHsqldbServer`
+- Stop Hsqldb Database:                `mvn exec:java -Dexec.mainClass=com.javaclinic.hsqldbrunner.run.StopHsqldbServer`
+- Start Hsqldb Database Manager (GUI): `mvn exec:java -Dexec.mainClass=com.javaclinic.hsqldbrunner.run.StartDatabaseManagerGui`
+- Re-initialize Hsqldb instance:       `mvn exec:java -Dexec.mainClass=com.javaclinic.hsqldbrunner.run.ReInitializeDatabaseTables`
+- Re-seed Hsqldb instance:             `mvn exec:java -Dexec.mainClass=com.javaclinic.hsqldbrunner.run.PopulateSeedData`
+
 Todo
 ----
-- Add maven exec plugin for all runnable tasks
+- Add SQL prompt
+- Add SQL file execution
+
 
 
