@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import com.javaclinic.hsqldbrunner.settings.MyDatabase;
+import com.javaclinic.hsqldbrunner.settings.Configuration;
 
 /**
  * Stops the running HyperSQL database instance.
@@ -18,16 +18,16 @@ public class StopHsqldbServer {
     public static void main(String[] args) throws ClassNotFoundException {
 
         System.out.println("Trying to shutdown HSLQDB server...");
-        Class.forName(MyDatabase.DATABASE_DRIVER);
+        Class.forName(Configuration.getProperty("database.driver"));
 
         Connection c = null;
         PreparedStatement ps = null;
         boolean success = false;
         try {
             c = DriverManager.getConnection(
-                    MyDatabase.DATABASE_URL,
-                    MyDatabase.DATABASE_USERNAME,
-                    MyDatabase.DATABASE_PASSWORD);
+                    Configuration.getProperty("database.url"),
+                    Configuration.getProperty("database.username"),
+                    Configuration.getProperty("database.password"));
             ps = c.prepareStatement("SHUTDOWN");
             ps.execute();
             success = true;

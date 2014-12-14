@@ -3,7 +3,7 @@ package com.javaclinic.hsqldbrunner.run;
 import org.hsqldb.cmdline.SqlTool;
 import org.hsqldb.cmdline.SqlTool.SqlToolException;
 
-import com.javaclinic.hsqldbrunner.settings.MyDatabase;
+import com.javaclinic.hsqldbrunner.settings.Configuration;
 
 /**
  * Re-initializes the HyperSQL database instance. Drops and re-creates all tables as
@@ -16,15 +16,15 @@ public class ReInitializeDatabaseTables {
 
     public static void main(String[] args) throws SqlToolException {
 
-        System.out.println("Run SQL script file: " + MyDatabase.DATABASE_SCHEMA);
+        System.out.println("Run SQL script file: " + Configuration.getProperty("database.schema"));
 
         SqlTool.objectMain(
             new String[] {
-                "--inlineRc=url=" + MyDatabase.DATABASE_URL + ",user=" + MyDatabase.DATABASE_USERNAME,
-                "--driver=" + MyDatabase.DATABASE_DRIVER,
+                "--inlineRc=url=" + Configuration.getProperty("database.url") + ",user=" + Configuration.getProperty("database.username"),
+                "--driver=" + Configuration.getProperty("database.driver"),
                 "--noAutofile",
                 "--autoCommit",
-                MyDatabase.DATABASE_SCHEMA
+                Configuration.getProperty("database.schema")
             }
         );
         System.out.println("Done.");

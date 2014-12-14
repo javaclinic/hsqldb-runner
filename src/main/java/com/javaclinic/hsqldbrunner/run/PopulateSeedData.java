@@ -3,7 +3,7 @@ package com.javaclinic.hsqldbrunner.run;
 import org.hsqldb.cmdline.SqlTool;
 import org.hsqldb.cmdline.SqlTool.SqlToolException;
 
-import com.javaclinic.hsqldbrunner.settings.MyDatabase;
+import com.javaclinic.hsqldbrunner.settings.Configuration;
 
 /**
  * Populates the HyperSQL database instance, as defined in
@@ -16,15 +16,15 @@ public class PopulateSeedData {
 
     public static void main(String[] args) throws SqlToolException {
 
-        System.out.println("Run SQL script file: " + MyDatabase.DATABASE_SEED);
+        System.out.println("Run SQL script file: " + Configuration.getProperty("database.seed"));
 
         SqlTool.objectMain(
             new String[] {
-                "--inlineRc=url=" + MyDatabase.DATABASE_URL + ",user=" + MyDatabase.DATABASE_USERNAME,
-                "--driver=" + MyDatabase.DATABASE_DRIVER,
+                "--inlineRc=url=" + Configuration.getProperty("database.url") + ",user=" + Configuration.getProperty("database.username"),
+                "--driver=" + Configuration.getProperty("database.driver"),
                 "--noAutofile",
                 "--autoCommit",
-                MyDatabase.DATABASE_SEED
+                Configuration.getProperty("database.seed")
             }
         );
         System.out.println("Done.");

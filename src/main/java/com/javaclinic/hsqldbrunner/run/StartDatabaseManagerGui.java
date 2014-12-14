@@ -2,7 +2,7 @@ package com.javaclinic.hsqldbrunner.run;
 
 import org.hsqldb.util.DatabaseManager;
 
-import com.javaclinic.hsqldbrunner.settings.MyDatabase;
+import com.javaclinic.hsqldbrunner.settings.Configuration;
 
 /**
  * Starts HyperSQL Database Manager (GUI) for the running instance.
@@ -17,10 +17,10 @@ public class StartDatabaseManagerGui {
         System.out.println("Starting HSQLDB GUI Database Manager...");
         DatabaseManager.main(
             new String[] {
-                "--driver", MyDatabase.DATABASE_DRIVER,
-                "--url", MyDatabase.DATABASE_URL,
-                "--user", MyDatabase.DATABASE_USERNAME,
-                "--password", MyDatabase.DATABASE_PASSWORD,
+                "--driver", Configuration.getProperty("database.driver"),
+                "--url", Configuration.getProperty("database.url"),
+                "--user", Configuration.getProperty("database.username"),
+                "--password", Configuration.getProperty("database.password"),
                 "--noexit"
             }
         );

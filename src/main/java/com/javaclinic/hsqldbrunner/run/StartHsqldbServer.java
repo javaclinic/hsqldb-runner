@@ -2,7 +2,7 @@ package com.javaclinic.hsqldbrunner.run;
 
 import org.hsqldb.Server;
 
-import com.javaclinic.hsqldbrunner.settings.MyDatabase;
+import com.javaclinic.hsqldbrunner.settings.Configuration;
 
 /**
  * Starts a HyperSQL database instance.
@@ -18,17 +18,17 @@ public class StartHsqldbServer {
         System.out.println("\n\n");
 
         Server server = new Server();
-        server.setPort(MyDatabase.DATABASE_PORT);
-        server.setDatabaseName(0, MyDatabase.DATABASE_ALIAS);
-        server.setDatabasePath(0, MyDatabase.DATABASE_DATAFILE);
+        server.setPort(Integer.parseInt(Configuration.getProperty("database.port")));
+        server.setDatabaseName(0, Configuration.getProperty("database.name"));
+        server.setDatabasePath(0, Configuration.getProperty("database.datafile"));
         server.setNoSystemExit(true);
         server.start();
 
         System.out.println("\n\n");
-        System.out.println("  jdbc_url: " + MyDatabase.DATABASE_URL);
-        System.out.println("  username: " + MyDatabase.DATABASE_USERNAME);
-        System.out.println("  password: " + MyDatabase.DATABASE_PASSWORD);
-        System.out.println("  driver:   " + MyDatabase.DATABASE_DRIVER);
+        System.out.println("  jdbc_url: " + Configuration.getProperty("database.url"));
+        System.out.println("  username: " + Configuration.getProperty("database.username"));
+        System.out.println("  password: " + Configuration.getProperty("database.password"));
+        System.out.println("  driver:   " + Configuration.getProperty("database.driver"));
         System.out.println("\n\n");
 
     }
